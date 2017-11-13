@@ -10,7 +10,7 @@ var config = {
     },
     port: process.env.PORT || 3000,
     db: 'mysql://root@localhost/back_office_development',
-    mdb: 'mongodb://admin:adminDedica@ds145379.mlab.com:45379/links'
+    mdb: 'YOUR_MONGODB'
   },
 
   test: {
@@ -28,8 +28,11 @@ var config = {
       name: 'back-office'
     },
     port: process.env.PORT || 3000,
-    db: 'mysql://localhost/back_office_production',
-    mdb: 'mongodb://admin:adminDedica@ds145379.mlab.com:45379/links'
+    db: process.env.DB,
+    host: process.env.HOST,
+    user: process.env.USER,
+    password : process.env.PASSWORD,
+    mdb: process.env.MONGO_DB
   }
 };
 

@@ -1,4 +1,5 @@
 var mysql = require('mysql');
+var config = require('../../config/config');
 //settings env
 var db;
 var dedica_variables;
