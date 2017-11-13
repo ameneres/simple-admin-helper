@@ -1,0 +1,31 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+ul.heading {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333; }
+
+li.heading {
+  float: left; }
+
+li.heading a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; }
+
+li.heading a:hover:not(.active) {
+  background-color: #111; }
+
+.selected{
+	background-color: blue;
+	color: white;
+}

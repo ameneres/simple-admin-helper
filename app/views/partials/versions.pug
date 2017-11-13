@@ -1,0 +1,8 @@
+each version in versions
+  div(class="version-row" 
+  	data-brand_name=version.brand_name 
+  	data-product_name=version.product_name 
+  	data-version_name=version.name 
+  	data-primary=version.primary_color_slug 
+  	data-secondary=version.secondary_color_slug 
+  	style="line-height: 30px;")= version.name 

@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  div
+    ul.heading
+      li.heading
+        a(href="/") Dedica Admin
+      if (user)
+        li
+          a #{user.username}
+        li(style="float:right")
+          a(class="active" href="/logout") Logout
+  
+  div(class="brand_div" style="width:12%;position: absolute;")
+    p BRANDS
+      if brands
+          each brand in brands
+            div(class="brand brand-row" data-id=brand.id style="line-height: 30px;")= brand.name
+  
+  div(class="products_div" style="margin-left:15%;width:12%;position: absolute;")
+    p(id="p-products") PRODUCTS
+
+  div(class="versions_div" style="margin-left:30%;width:12%;position: absolute;")
+    p(id="p-versions") VERSIONS
+
+  div(style="margin-left:50%;position: absolute;")
+    .text-left
+      form.form-horizontal.form-signin(action="/search", method="post", role="form", id="searchForm")
+        input(type='hidden', name='_csrf', value=csrf_token)
+
+        | Product
+        input(type='text', name="search", placeholder=placeholder)
+        button(type="submit") Submit
+
+    div(id="result")
+      if links
+        include partials/result
+

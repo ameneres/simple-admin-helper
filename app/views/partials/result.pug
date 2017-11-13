@@ -1,0 +1,16 @@
+h3 the results for - #{search_term}
+- var count = 0;
+if links
+    table
+      tr
+        th Field
+        th Product
+      each product in links
+        - count++;
+        each value, key in product
+          if (key !== "_id" && key !== "score" && key !== "date")
+            tr(style=(count % 2 == 0 ? 'background-color: #d3d3d3' : ''))
+              td= key
+              td(style="padding: 5px;")= value
+else
+  p No results 
