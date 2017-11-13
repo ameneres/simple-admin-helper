@@ -13,7 +13,6 @@ var csrf = require('csurf');
 var mongoStore = require('connect-mongo')(session);
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var config = require('./config');
 var pkg = require('../package.json');
 
 

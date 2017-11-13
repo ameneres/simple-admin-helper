@@ -8,10 +8,10 @@ function connectDatabase() {
   console.log('estou sempre a correr o mysql!!');
     if (!db) {
         db = mysql.createPool({
-          host     : '46.101.140.34',
-          user     : 'dev_pub_dedica',
-          password : '5Ev5YVokFtyJweL8',
-          database : 'dev_dedica'
+          host     : config.host,
+          user     : config.user,
+          password : config.password,
+          database : config.db
         });
 
         /*var initialQuery = `
