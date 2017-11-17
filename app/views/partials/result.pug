@@ -9,8 +9,14 @@ if links
         - count++;
         each value, key in product
           if (key !== "_id" && key !== "score" && key !== "date")
-            tr(style=(count % 2 == 0 ? 'background-color: #d3d3d3' : ''))
-              td= key
-              td(style="padding: 5px;")= value
+            if (key === "link")
+              tr(style=(count % 2 == 0 ? 'background-color: #d3d3d3' : ''))
+                td= key
+                td(style="padding: 5px;")
+                  a(target="_blank" href=value)= value
+            else
+              tr(style=(count % 2 == 0 ? 'background-color: #d3d3d3' : ''))
+                td= key
+                td(style="padding: 5px;")= value
 else
   p No results 
