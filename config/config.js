@@ -9,8 +9,11 @@ var config = {
       name: 'back-office'
     },
     port: process.env.PORT || 3000,
-    db: 'mysql://root@localhost/back_office_development',
-    mdb: 'YOUR_MONGODB'
+    db: 'dev_dedica',
+    host: '46.101.140.34',
+    user: 'dev_pub_dedica' || process.env.USER,
+    password : process.env.PASSWORD || '5Ev5YVokFtyJweL8',
+    mdb: 'mongodb://admin:adminDedica@ds145379.mlab.com:45379/links'
   },
 
   test: {
@@ -37,3 +40,16 @@ var config = {
 };
 
 module.exports = config[env];
+
+
+/*
+development: {
+    root: rootPath,
+    app: {
+      name: 'back-office'
+    },
+    port: process.env.PORT || 3000,
+    db: 'mysql://root@localhost/back_office_development',
+    mdb: 'YOUR_MONGODB'
+  }
+*/

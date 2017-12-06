@@ -24,8 +24,3 @@ li.heading a {
 
 li.heading a:hover:not(.active) {
   background-color: #111; }
-
-.selected{
-	background-color: blue;
-	color: white;
-}
