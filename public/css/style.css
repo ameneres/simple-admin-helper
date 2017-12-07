@@ -24,3 +24,16 @@ li.heading a {
 
 li.heading a:hover:not(.active) {
   background-color: #111; }
+
+.selected {
+  background-color: #add8e6; }
+
+.row-done {
+  background-color: #ffa500; }
+
+.done {
+  display: none;
+  background-color: #ffa500; }
+
+.added {
+  display: none; }

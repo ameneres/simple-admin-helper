@@ -29,6 +29,7 @@ $( document ).ready(function() {
 		  	//console.log(data);
 		    //var content = $( data ).find( "#content" );
 		    $( "#result" ).empty().append( data );
+		    activateRemoveResult();
 		  });
 		});	
 	}
@@ -85,5 +86,34 @@ $( document ).ready(function() {
 			
 			//$( ".brand" ).attr('disabled',true); 
 		})}
+
+	function activateRemoveResult(){
+		$('.button-remove').click(function(e){
+			var id = $(this).attr("id");
+			var url = '/remove/' + id;
+			console.log(url);
+
+			$.get(url, function(data){
+				console.log(data);
+				$('table[table_id="' + id + '"]').addClass('done');
+				$('tr[row_id="' + id + '"]').addClass('row-done');
+			})
+			
+		})
+
+		$('.switch').click(function(){
+			console.log('clicking the swicth');
+			var $this = $(this);
+		    $this.toggleClass('hide-used');
+		    if($this.hasClass('hide-used')){
+		        $this.text('Hide used links');         
+		    } else {
+		        $this.text('Show all');
+
+		    }
+
+		    $('.done').toggle();
+		})
+	}
 
 });

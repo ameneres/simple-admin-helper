@@ -4,7 +4,15 @@ var db = require('../models'),
 console.log('sequencia: 7 - routes - home.js');
 
 var Schema = mongoose.Schema;
-var LinkSchema = new Schema();
+var LinkSchema = new Schema({
+  product: String,
+  price: String,
+  link: String,
+  currency: String,
+  supplier: String,
+  date: Date,
+  used: Boolean
+});
 var Links = mongoose.model('Links', LinkSchema, 'Links');
 LinkSchema.index({"link":"text","product":"text"});
 
@@ -140,6 +148,24 @@ exports.search = function (req, res, next) {
       });
     });
 };
+
+exports.remove_id = function (req, res, next) {
+  console.log(req.params.id);
+  
+  Links.findById(req.params.id, function(err, link)  {
+      if(err) throw err;
+      console.log(link);
+      link.used = true;
+      console.log('after modifying USED: ', link)
+      link.save(function(err, link){
+        console.log('after saving ', link);
+        res.send('all good');
+      })
+      
+    });
+  
+};
+
 
 
 /*

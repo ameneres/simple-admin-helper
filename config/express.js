@@ -140,6 +140,9 @@ module.exports = function(app, config) {
 // Search
   app.post('/search', requiresLogin, homeController.search);
 
+  // Remore from search results
+  app.get('/remove/:id', requiresLogin, homeController.remove_id);
+
 
 
 

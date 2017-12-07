@@ -1,22 +1,23 @@
 h3 the results for - #{search_term}
 - var count = 0;
 if links
-    table
-      tr
-        th Field
-        th Product
-      each product in links
-        - count++;
-        each value, key in product
-          if (key !== "_id" && key !== "score" && key !== "date")
-            if (key === "link")
-              tr(style=(count % 2 == 0 ? 'background-color: #d3d3d3' : ''))
-                td= key
-                td(style="padding: 5px;")
-                  a(target="_blank" href=value)= value
-            else
-              tr(style=(count % 2 == 0 ? 'background-color: #d3d3d3' : ''))
-                td= key
-                td(style="padding: 5px;")= value
+
+  each product in links
+    table(class=(product.used ? 'done' : '') table_id=product._id)
+      - count++;
+      each value, key in product
+        if (key !== "score" && key !== "date")
+          if (key === "link")
+            tr(style=(count % 2 == 0 ? 'background-color: #d3d3d3' : ''))
+              td= key
+              td(style="padding: 5px;")
+                a(target="_blank" href=value)= value
+          else
+            tr(style=(count % 2 == 0 ? 'background-color: #d3d3d3' : ''))
+              td= key
+              td(style="padding: 5px;")= value
+      tr(class=(product.used ? 'row-done' : '') row_id=product._id)
+        td 
+          button(class="button-remove" id=product._id) Remove
 else
   p No results 
