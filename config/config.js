@@ -8,12 +8,12 @@ var config = {
     app: {
       name: 'back-office'
     },
-    port: process.env.PORT || 3000,
-    db: 'dev_dedica',
-    host: '46.101.140.34',
-    user: 'dev_pub_dedica' || process.env.USER,
-    password : process.env.PASSWORD || '5Ev5YVokFtyJweL8',
-    mdb: 'mongodb://admin:adminDedica@ds145379.mlab.com:45379/links'
+    port: 3000,
+    db: 'db',
+    host: 'host',
+    user: 'user',
+    password : 'pass',
+    mdb: 'mdb'
   },
 
   test: {
